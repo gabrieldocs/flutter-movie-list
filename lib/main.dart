@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mymovies/Components/Collection.dart';
+import 'package:mymovies/Components/SingleMovie.dart';
 // import 'package:mymovies/Components/SingleMovie.dart';
 import 'package:mymovies/Pages/Details.dart';
 import 'package:mymovies/Pages/Preferences.dart';
@@ -43,23 +45,32 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.push(
+      body: Padding(
+        padding: EdgeInsets.all(12.0),
+        child: SingleChildScrollView(
+
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+              Collection(),
+              Collection(),
+              Collection(),
+              Text(
+                'You have pushed the button this many times:',
+              ),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context)=> Details()),
                   );
@@ -75,7 +86,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('Go to preferences screen'))
           ],
         ),
-
+      ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
