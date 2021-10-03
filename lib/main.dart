@@ -47,9 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        title: Text(widget.title, style: TextStyle(color: Colors.deepPurple),),
       ),
       body: Padding(
         padding: EdgeInsets.all(12.0),

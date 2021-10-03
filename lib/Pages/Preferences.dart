@@ -20,7 +20,10 @@ class Preferences extends StatelessWidget {
               ),
               label: const Text('Aaron Burr'),
             ),
-            SingleMovie(),
+            Container(
+              height: 300.0,
+              child: SingleMovie(),
+            ),
             Text('See your preferences'),
             ElevatedButton(
               child: Text('Go back jack'),
